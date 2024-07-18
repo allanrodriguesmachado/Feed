@@ -53,12 +53,18 @@ export default function App() {
                 <main>
                   {
                     posts.map(post => {
+                      post.content.map(conte => {
+                        console.log(conte)
+                      })
+
                       return  (
                         <Post 
                           key={post.id}
                           avatarUrl={post.author.avatarUrl}
                           author={post.author.name} 
-                          role={post.author.role}/>
+                          role={post.author.role}
+                          paragraph={post.content.paragraph}
+                          />
                       )
                     })
                   }

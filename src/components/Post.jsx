@@ -2,7 +2,7 @@ import styles from './Post.module.css'
 import {Comment} from "./Comment.jsx";
 import {Avatar} from "./Avatar.jsx";
 
-export function Post({author, role, avatarUrl}) {
+export function Post({author, role, avatarUrl, paragraph}) {
     return (
         <article className={styles.post}>
             <header className={styles.headerPost}>
@@ -19,7 +19,7 @@ export function Post({author, role, avatarUrl}) {
             </header>
 
             <div className={styles.content}>
-                <p>Fala galeraa 👋</p>
+                <p>{paragraph}</p>
                 <p>Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀</p>
                 <p>👉 {' '} <a href="#">jane.design/doctorcare</a></p>
                 <p>
