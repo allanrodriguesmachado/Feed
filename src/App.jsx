@@ -28,7 +28,7 @@ const posts = [
         author: {
             avatarUrl: "https://github.com/allanrodriguesmachado.png",
             name: "Allan",
-            role: "DevAllan"
+            role: "DevAllanTESTE"
         },
         content: [
             {type: 'paragraph', content: 'Fala galeraa 👋'},
@@ -51,8 +51,17 @@ export default function App() {
                 <Sidebar/>
 
                 <main>
-                    <Post/>
-                    <Post/>
+                  {
+                    posts.map(post => {
+                      return  (
+                        <Post 
+                          key={post.id}
+                          avatarUrl={post.author.avatarUrl}
+                          author={post.author.name} 
+                          role={post.author.role}/>
+                      )
+                    })
+                  }
                 </main>
             </div>
         </>
