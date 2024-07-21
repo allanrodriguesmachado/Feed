@@ -38,7 +38,7 @@ const posts = [
             },
             {type: 'link', content: 'jane.design/doctorcare'},
         ],
-        publishedAt: new Date('2024-05-10 20:00:00')
+        publishedAt: new Date('2024-07-19 20:00:00')
     }
 ]
 
@@ -53,10 +53,6 @@ export default function App() {
                 <main>
                   {
                     posts.map(post => {
-                      post.content.map(conte => {
-                        console.log(conte)
-                      })
-
                       return  (
                         <Post 
                           key={post.id}
@@ -64,6 +60,8 @@ export default function App() {
                           author={post.author.name} 
                           role={post.author.role}
                           paragraph={post.content.paragraph}
+                          publishedAt={post.publishedAt}
+                          content={post.content}
                           />
                       )
                     })
